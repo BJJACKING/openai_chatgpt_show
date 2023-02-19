@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat with ai</title>
+</head>
+<body>
+  <center>
+    <h3>chat with ai</h3>
+    <div>
+        <form action="/html_txt" method="post">
+        提问: <input type="text" name="ask"><br>
+            <br>
+        <input type="submit" name="submit" value="提交">
+        </form>
+    </div>
+    <div class="rr">
+<!--        #如果session中ans不为空，则显示-->
+       {% if session['ans'] != ''  %}
+        <a href="#">"ask: "</a>
+        <a href="#">{{ session['ask']}}</a>
+        <br>
+        <a href="#">"answer: "</a>
+        <a href="#">{{ session['ans']}}</a>
+        {% endif %}
+    </div>
+    <hr>
+    <div>
+        <form action="/html_image" method="post">
+        画图: <input type="text" name="query"><br>
+            <br>
+        <input type="submit" name="submit" value="提交">
+        </form>
+    </div>
+    <div class="rr">
+        <!--        #如果session中ans不为空，则显示-->
+       {% if session['img_url'] != ''  %}
+<!--            <a href="#">{{ session['img_url']}}</a>-->
+            <a href="#">"query: "</a>
+            <a href="#">{{ session['query']}}</a>
+            <br>
+            <img src="{{session['img_url']}}">
+       {% endif %}
+    </div>
+</center>
+</body>
+</html>
