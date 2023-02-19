@@ -20,5 +20,5 @@ def get_openai_txt(prompt):
 
 
 if __name__ == "__main__":
-    prompt = "根据参数画出beta分布图的python程序"
+    prompt = "你好"
     get_openai_txt(prompt)
